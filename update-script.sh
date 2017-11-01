@@ -11,6 +11,6 @@ export TERM=xterm
 
 echo -e ${cya}"Removing old build script..." ${txtrst};
 rm -rf script_build.sh
-echo -e ${cya}"Moving new script to new location..." ${txtrst};
+echo -e ${cya}"Replacing build script..." ${txtrst};
 mv script_build-temp.sh script_build.sh
 source script_build.sh

@@ -16,6 +16,7 @@ then
 	echo -e ${cya}"Downloading scripts..." ${txtrst};
 	curl https://raw.githubusercontent.com/minz1/build_script/master/script.sh > script_build-temp.sh
 	curl https://raw.githubusercontent.com/minz1/build_script/master/update-script.sh > update-script-temp.sh
+	curl https://raw.githubusercontent.com/minz1/build_script/master/repopicks.sh > repopicks-temp.sh
 	echo -e ${cya}"Removing old updater script..." ${txtrst};
 	rm -rf update-script.sh
 	echo -e ${cya}"Replacing updater script..." ${txtrst};
@@ -29,6 +30,7 @@ fi
 if [ "$sync_repositories" = "true" ];
 then
 	repo sync --force-sync -j8
+	. repopicks.sh
 fi
 
 # ccache
@@ -45,7 +47,7 @@ then
 	export CCACHE_DIR=/home/ccache/$username
 	ccache -C
 	wait
-	echo -e ${grn}"CCACHE Cleared." ${txtrst};
+	echo -e ${grn}"CCache Cleared." ${txtrst};
 fi
 
 # clean

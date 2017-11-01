@@ -25,6 +25,12 @@ then
 	wait
 fi
 
+# sync repositories
+if [ "$sync_repositories" = "true" ];
+then
+	repo sync --force-sync -j8
+fi
+
 # ccache
 if [ "$use_ccache" = "yes" ];
 then
@@ -39,7 +45,7 @@ then
 	export CCACHE_DIR=/home/ccache/$username
 	ccache -C
 	wait
-	echo -e ${cya}"CCACHE Cleared." ${txtrst};
+	echo -e ${grn}"CCACHE Cleared." ${txtrst};
 fi
 
 # clean
@@ -47,7 +53,7 @@ if [ "$make_clean" = "yes" ];
 then
 	make clean && make clobber
 	wait
-	echo -e ${cya}"out/ Cleared." ${txtrst};
+	echo -e ${grn}"out/ Cleared." ${txtrst};
 else
 	echo -e ${red}"Building dirty." ${txtrst};
 fi

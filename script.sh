@@ -5,13 +5,21 @@ username=minz
 # colors
 export TERM=xterm
 
-    red=$(tput setaf 1)             #  red
-    grn=$(tput setaf 2)             #  green
-    blu=$(tput setaf 4)             #  blue
-    cya=$(tput setaf 6)             #  cyan
-    txtrst=$(tput sgr0)             #  Reset
-# ccache
+    red=$(tput setaf 1)             #  RED
+    grn=$(tput setaf 2)             #  GREEN
+    blu=$(tput setaf 4)             #  BLUE
+    cya=$(tput setaf 6)             #  CYAN
+    txtrst=$(tput sgr0)             #  RESET
 
+if [ "$update_script" = "yes" ];
+then
+	echo -e ${cya}"Updating script..." ${txtrst};
+	curl https://raw.githubusercontent.com/minz1/build_script/master/script.sh > script_build-temp.sh
+	update_script=no
+	. update-script.sh
+fi
+
+# ccache
 if [ "$use_ccache" = "yes" ];
 then
 	echo -e ${blu}"CCache is enabled for this build." ${txtrst};

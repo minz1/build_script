@@ -4,6 +4,9 @@
 echo -e ${cya}"Picking changes from Lineage gerrit..." ${txtrst};
 # Repopicks begin here
 
+git config --global user.email "emerytang@gmail.com"
+git config --global user.name "minz1"
+
 ### # Recovery updates
 repopick 186687; ## _<sup><sub>https://review.lineageos.org/#/c/186687</sup></sub>_  
 repopick 187332 187374; ## _<sup><sub>https://review.lineageos.org/#/q/change:187332+OR+change:187374</sup></sub>_  

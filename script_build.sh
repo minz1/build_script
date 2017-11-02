@@ -13,10 +13,7 @@ export TERM=xterm
 
 if [ "$update_script" = "yes" ];
 then
-	echo -e ${cya}"Downloading scripts..." ${txtrst};
-	curl https://raw.githubusercontent.com/minz1/build_script/master/script.sh > script_build-temp.sh
 	curl https://raw.githubusercontent.com/minz1/build_script/master/update-script.sh > update-script-temp.sh
-	curl https://raw.githubusercontent.com/minz1/build_script/master/repopicks.sh > repopicks-temp.sh
 	echo -e ${cya}"Removing old updater script..." ${txtrst};
 	rm -rf update-script.sh
 	echo -e ${cya}"Replacing updater script..." ${txtrst};

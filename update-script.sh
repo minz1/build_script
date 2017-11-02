@@ -9,12 +9,14 @@ export TERM=xterm
     cya=$(tput setaf 6)             #  CYAN
     txtrst=$(tput sgr0)             #  RESET
 
-echo -e ${cya}"Removing old build script..." ${txtrst};
-rm -rf script_build.sh
-echo -e ${cya}"Replacing build script..." ${txtrst};
-mv script_build-temp.sh script_build.sh
-echo -e ${cya}"Removing old repo pick script..." ${txtrst};
-rm -rf repopicks.sh
-echo -e ${cya}"Replacing repo pick script..." ${txtrst};
-mv repopicks-temp.sh repopicks.sh
+function updateScript() {
+	echo -e ${cya}"Updating $1..." ${txtrst};
+	curl https://raw.githubusercontent.com/minz1/build_script/master/$1 > $1-temp
+	rm -rf $1
+	mv $1-temp $1
+}
+
+updateScript "script_build.sh"
+updateScript "repopicks.sh"
+
 source script_build.sh

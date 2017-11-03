@@ -49,3 +49,6 @@ repopick 193544 192490 193490 193770; ## _<sup><sub>https://review.lineageos.org
 repopick 193156; ## _<sup><sub>https://review.lineageos.org/#/q/change:193156</sup></sub>_  
 cd $(gettop)/frameworks/base/; rm -rf .git/rebase-apply; curl https://github.com/AdrianDC/lineage_development_sony8960/commit/fbbac8c497fe3b036226a38421eb6a94f32b1ec0.patch | git am -3; cd $(gettop)/;  
 repopick -Q 'status:open+topic:oreo-lights'; ## _<sup><sub>https://review.lineageos.org/#/q/status:open+topic:oreo-lights</sup></sub>
+
+### hardware/samsung
+repopick 190634; # Add references to liblog

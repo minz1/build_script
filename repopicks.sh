@@ -56,7 +56,7 @@ repopick 195655; # macloader: Move device dependent modules to /vendor
 repopick -Q 'status:open+topic:samsung-libril-oreo'; ## _<sup><sub>https://review.lineageos.org/#/q/status:open+topic:samsung-libril-oreo</sup></sub>
 
 ### device/samsung/qcom-common
-repopick 192817; # qcom-common: Move lineage specific overlays to overlay-lineage
+#repopick 192817; # qcom-common: Move lineage specific overlays to overlay-lineage
 #repopick 192835; # qcom-common: Enable HWC2
 repopick 191347; # [DNM] qcom-common: O bringup
 #repopick 193020; # qcom-common: Enable passthrough graphics allocator

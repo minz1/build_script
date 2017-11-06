@@ -52,6 +52,8 @@ repopick -Q 'status:open+topic:oreo-lights'; ## _<sup><sub>https://review.lineag
 
 ### hardware/samsung
 repopick 190634; # Add references to liblog
+repopick 195655; # macloader: Move device dependent modules to /vendor
+repopick -Q 'status:open+topic:samsung-libril-oreo'; ## _<sup><sub>https://review.lineageos.org/#/q/status:open+topic:samsung-libril-oreo</sup></sub>
 
 ### device/samsung/qcom-common
 repopick 192817; # qcom-common: Move lineage specific overlays to overlay-lineage

@@ -14,7 +14,7 @@ repopick 187155; ## _<sup><sub>https://review.lineageos.org/#/c/187155</sup></su
 
 ### # Bionic and native
 repopick 185640; ## _<sup><sub>https://review.lineageos.org/#/c/185640</sup></sub>_  
-repopick 185671; ## _<sup><sub>https://review.lineageos.org/#/c/185671</sup></sub>_
+repopick 185634 -f; ## _<sup><sub>https://review.lineageos.org/#/c/185634</sup></sub>_
 
 ### # Apps updates
 repopick 188389 188518-188526; ## _<sup><sub>https://review.lineageos.org/#/q/project:LineageOS/android_packages_apps_Camera2+branch:lineage-15.0</sup></sub>_  
@@ -29,14 +29,12 @@ repopick 185888 187146; ## _<sup><sub>https://review.lineageos.org/#/q/change:18
 
 ### # UI updates
 repopick 193830 194226; ## _<sup><sub>https://review.lineageos.org/#/q/change:193830+OR+change:194226</sup></sub>_  
-repopick 194378; ## _<sup><sub>https://review.lineageos.org/#/c/194378</sup></sub>_
 
 ### # Topic: android-o-camera-hal1 (188388 temporary)
 repopick -Q 'status:open+topic:android-o-camera-hal1'; ## _<sup><sub>https://review.lineageos.org/#/q/status:open+topic:android-o-camera-hal1</sup></sub>_  
 repopick -f 188388; ## _<sup><sub>https://review.lineageos.org/#/c/188388</sup></sub>_
 
 ### # Topic: LineageOS Features
-repopick 193540; ## _<sup><sub>https://review.lineageos.org/#/c/193540</sup></sub>_  
 repopick 192490; ## _<sup><sub>https://review.lineageos.org/#/c/192490</sup></sub>_  
 repopick 191921 187592; ## _<sup><sub>https://review.lineageos.org/#/q/change:191921+OR+change:187592</sup></sub>_  
 repopick -Q 'status:open+topic:oreo-powermenu'; ## _<sup><sub>https://review.lineageos.org/#/q/status:open+topic:oreo-powermenu</sup></sub>_  

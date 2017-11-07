@@ -7,6 +7,9 @@ echo -e ${cya}"Picking changes from Lineage gerrit..." ${txtrst};
 git config --global user.email "emerytang@gmail.com"
 git config --global user.name "minz1"
 
+# Remove asserts
+repopick 186687
+
 # frameworks/av -> libstagefright: add NV21 color #
 repopick 187892
 

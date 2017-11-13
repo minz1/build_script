@@ -11,36 +11,36 @@ export TERM=xterm
     cya=$(tput setaf 6)             #  CYAN
     txtrst=$(tput sgr0)             #  RESET
 
-if [ "$update_script" = "yes" ];
-then
-	curl https://raw.githubusercontent.com/minz1/build_script/master/update-script.sh > update-script-temp.sh
+cd "$build_dir"
+
+if [ "$update_script" = "yes" ]; then
+	curl https://raw.githubusercontent.com/minz1/build_script/master/update-script.sh > ../update-script-temp.sh
 	echo -e ${cya}"Removing old updater script..." ${txtrst};
-	rm -rf update-script.sh
+	rm -rf ../update-script.sh
 	echo -e ${cya}"Replacing updater script..." ${txtrst};
-	mv update-script-temp.sh update-script.sh
+	mv ../update-script-temp.sh ../update-script.sh
 	update_script=no
-	. update-script.sh
+	. ../update-script.sh
 	wait
 fi
 
 # sync repositories
-if [ "$sync_repositories" = "true" ];
-then
+if [ "$sync_repositories" = "true" ]; then
 	repo sync --force-sync -j8
-	. repopicks.sh
+	if ["$build_dir" = "lineage-15.0"]; then
+		. ../repopicks.sh
+	fi
 fi
 
 # ccache
-if [ "$use_ccache" = "yes" ];
-then
+if [ "$use_ccache" = "yes" ]; then
 	echo -e ${blu}"CCache is enabled for this build." ${txtrst};
 	export USE_CCACHE=1
 	export CCACHE_DIR=/home/ccache/$username
-	prebuilts/misc/linux-x86/ccache/ccache -M 50G
+	prebuilts/misc/linux-x86/ccache/ccache -M 100G
 fi
 
-if [ "$use_ccache" = "clean" ];
-then
+if [ "$use_ccache" = "clean" ]; then
 	export CCACHE_DIR=/home/ccache/$username
 	ccache -C
 	wait
@@ -48,8 +48,7 @@ then
 fi
 
 # clean
-if [ "$make_clean" = "yes" ];
-then
+if [ "$make_clean" = "yes" ]; then
 	make clean && make clobber
 	wait
 	echo -e ${grn}"out/ Cleared." ${txtrst};

@@ -53,6 +53,9 @@ if [ "$make_clean" = "yes" ]; then
 	wait
 	echo -e ${grn}"out/ Cleared." ${txtrst};
 else
+	cd out/target/product/$device
+	rm -rf *.zip && rm -rf *.md5sum
+	cd ../../../..
 	echo -e ${red}"Building dirty." ${txtrst};
 fi
 

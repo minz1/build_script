@@ -29,9 +29,6 @@ repopick 195755
 repopick 186244
 repopick 186245
 
-# qcom-common
-repopick 191347
-
 # android-o-camera-hal #   frameworks_av
 repopick 187558 # libcameraservice: Don't pass NULL args on setCallbacks call
 repopick 187559 # camera/media: Support for legacy camera HALv1   Y

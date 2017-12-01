@@ -1,6 +1,7 @@
 #!/bin/bash
 
 username=minz
+outdir=out/target/product/$device
 
 # colors
 export TERM=xterm
@@ -53,9 +54,11 @@ if [ "$make_clean" = "yes" ]; then
 	wait
 	echo -e ${grn}"out/ Cleared." ${txtrst};
 else
-	cd out/target/product/$device
-	rm -rf *.zip && rm -rf *.md5sum
-	cd ../../../..
+	if [ -d "$outdir" ]; then
+		cd $outdir
+		rm -rf *.zip && rm -rf *.md5sum
+		cd ../../../..
+	fi
 	echo -e ${red}"Building dirty." ${txtrst};
 fi
 

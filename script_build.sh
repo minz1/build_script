@@ -28,9 +28,11 @@ fi
 # sync repositories
 if [ "$sync_repositories" = "true" ]; then
 	repo sync --force-sync -j8
-	if ["$build_dir" = "lineage-15.0"]; then
-		. ../repopicks.sh
-	fi
+fi
+
+# repopicks
+if [ "$repopicks_enabled" = "true" ]; then
+	. ../repopicks.sh
 fi
 
 # ccache

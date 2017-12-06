@@ -27,3 +27,6 @@ repopick 187644
 
 # vendor/lineage
 repopick 192352
+
+# liblights
+repopick 191562

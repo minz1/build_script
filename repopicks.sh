@@ -33,3 +33,8 @@ repopick 191562
 
 # audio
 repopick 191378
+
+# HALs
+repopick 195719
+repopick 195720
+repopick 195721

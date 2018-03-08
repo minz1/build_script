@@ -64,5 +64,5 @@ echo -e ${blu}"Build type set to $build_type." ${txtrst};
 
 # build
 . build/envsetup.sh
-lunch lineage_$device-$build_type
+lunch "${lunch_command}_${device}-${build_type}"
 make $target_command -j8

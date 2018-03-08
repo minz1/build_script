@@ -30,11 +30,6 @@ if [ "$sync_repositories" = "true" ]; then
 	repo sync --force-sync -j8
 fi
 
-# repopicks
-if [ "$repopicks_enabled" = "true" ]; then
-	. ../repopicks.sh
-fi
-
 # ccache
 if [ "$use_ccache" = "yes" ]; then
 	echo -e ${blu}"CCache is enabled for this build." ${txtrst};

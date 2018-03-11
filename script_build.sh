@@ -65,4 +65,9 @@ echo -e ${blu}"Build type set to $build_type." ${txtrst};
 # build
 . build/envsetup.sh
 lunch "${lunch_command}_${device}-${build_type}"
+
+if [ "$treble_device" = "true" ]; then
+	export WITHOUT_CHECK_API=true
+fi
+
 make $target_command -j8

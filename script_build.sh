@@ -35,7 +35,7 @@ if [ "$use_ccache" = "yes" ]; then
 	echo -e ${blu}"CCache is enabled for this build." ${txtrst};
 	export USE_CCACHE=1
 	export CCACHE_DIR=/home/ccache/$username
-	prebuilts/misc/linux-x86/ccache/ccache -M 100G
+	prebuilts/misc/linux-x86/ccache/ccache -M 500G
 fi
 
 if [ "$use_ccache" = "clean" ]; then

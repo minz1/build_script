@@ -47,9 +47,13 @@ fi
 
 # clean
 if [ "$make_clean" = "yes" ]; then
-	make clean && make clobber
-	wait
-	echo -e ${grn}"out/ Cleared." ${txtrst};
+	if [ ! -d "$outdir" ]; then
+		make clean -j9
+		wait
+		echo -e ${grn}"out/ Cleared." ${txtrst};
+	else
+		echo -e ${grn}"No need to make clean." ${txtrst};
+	fi
 else
 	if [ -d "$outdir" ]; then
 		cd $outdir
@@ -70,4 +74,4 @@ if [ "$treble_device" = "true" ]; then
 	export WITHOUT_CHECK_API=true
 fi
 
-make $target_command -j8
+make $target_command -j9

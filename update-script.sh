@@ -17,4 +17,3 @@ function updateScript() {
 }
 
 updateScript "script_build.sh"
-updateScript "repopicks.sh"
